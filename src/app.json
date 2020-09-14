@@ -1,0 +1,41 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/mine/index",
+        "pages/heart/index",
+        "pages/common/wallpaper"
+    ],
+    "window": {
+        "navigationBarTitleText": "Remax",
+        "navigationBarTextStyle": "black",
+        "navigationBarBackgroundColor": "#ffffff",
+        "backgroundColor": "#f5f5f5",
+        "enablePullDownRefresh": true
+    },
+    "tabBar": {
+        "color": "#333333",
+        "selectedColor": "#f26123",
+        "backgroundColor": "#ffffff",
+        "borderStyle": "white",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "首页",
+                "iconPath": "./public/home_1.png",
+                "selectedIconPath": "./public/home_2.png"
+            },
+            {
+                "pagePath": "pages/heart/index",
+                "text": "商城",
+                "iconPath": "./public/heart_1.png",
+                "selectedIconPath": "./public/heart_2.png"
+            },
+            {
+                "pagePath": "pages/mine/index",
+                "text": "我的",
+                "iconPath": "./public/my_1.png",
+                "selectedIconPath": "./public/my_2.png"
+            }
+        ]
+    }
+}

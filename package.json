@@ -1,0 +1,26 @@
+{
+  "name": "chat",
+  "private": true,
+  "version": "1.0.0",
+  "description": "小菜",
+  "main": "index.js",
+  "keywords": [],
+  "author": "gaoht",
+  "license": "MIT",
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "remax build -t wechat -w",
+    "build": "cross-env NODE_ENV=production remax build -t wechat"
+  },
+  "dependencies": {
+    "@remax/plugin-less": "^1.0.0",
+    "anna-remax-ui": "^1.8.17",
+    "react": "^16.12.0",
+    "remax": "^2.7.8",
+    "remax-cli": "^1.21.6"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.2",
+    "webpack-chain": "^6.5.1"
+  }
+}

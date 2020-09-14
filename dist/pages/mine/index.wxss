@@ -1,0 +1,87 @@
+.app___23sT_ {
+  width: 96%;
+  height: 96%;
+  margin-top: 2%;
+  margin-left: 2%;
+  color: #666;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.shici___1NI5L {
+  width: 90%;
+  height: 10%;
+  margin: 20px auto 5px auto;
+  color: yellowgreen;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.btnLang___1jGr9 {
+  width: 100%;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 4px;
+  background: yellowgreen;
+  color: #fff;
+  margin: 5px auto;
+}
+.infoRow___1DXtH {
+  width: 100%;
+  height: 40%;
+  color: #333;
+}
+.infoCol___1fepE {
+  width: 100%;
+  height: 100%;
+}
+.info___kdgxA {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+.bindBtn___1Zo48 {
+  width: 80px;
+  height: 80px;
+  margin: 0;
+  padding: 0;
+  border: 1px solid transparent;
+  background: transparent;
+  line-height: 80px;
+  outline: none;
+}
+.touBox___2rd9f {
+  width: 80px;
+  height: 80px;
+  border: 1px dashed #ada6a6;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tou___fry5u {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+}
+.Icon___1sCcv {
+  width: 64px;
+  height: 64px;
+}
+.listRow___13dTd {
+  width: 100%;
+  height: 20%;
+}
+.listRow___13dTd .listCol___1o1pf {
+  width: 100%;
+  height: 80%;
+}
+.listBox___24Vzo {
+  width: 100%;
+  height: 100%;
+  border: 1px dashed #999;
+  text-align: center;
+}
+

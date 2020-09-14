@@ -1,0 +1,35 @@
+.app___wI8RB {
+  width: 96%;
+  height: 96%;
+  margin-top: 2%;
+  margin-left: 2%;
+  color: #666;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.shici___2jeB0 {
+  width: 90%;
+  height: 10%;
+  margin: 20px auto 5px auto;
+  color: yellowgreen;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.btnLang___1IMzS {
+  width: 100%;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 4px;
+  background: yellowgreen;
+  color: #fff;
+  margin: 5px auto;
+}
+.app___wI8RB {
+  color: red;
+  text-align: center;
+}
+
