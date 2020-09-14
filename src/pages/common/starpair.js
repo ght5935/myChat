@@ -52,41 +52,45 @@ export default () => {
     usePageEvent('onLoad', () => {
         // queryData()
     })
-    usePageEvent('onReachBottom', () => {
+    // usePageEvent('onReachBottom', () => {
 
-        console.log('上拉加载')
-    })
-    usePageEvent('onPullDownRefresh', () => {
-        console.log('下拉刷新')
-    })
+    //     console.log('上拉加载')
+    // })
+    // usePageEvent('onPullDownRefresh', () => {
+    //     console.log('下拉刷新')
+    // })
 
 
     return (
         <View className={styles.app}>
-            <div className={styles.shici}>每日一笑</div>
-
             <div className={styles.inputBox}>
                 <label> <span style={{ color: 'red' }}>*</span>男生 </label>
-                <input type="text" name="fname" className={styles.starInput}
-                    onchange={(e) => {
-                        console.log(e)
-                        setParams({ ...params, men: e.target.value })
+                <input type="text" name="men" placeholder="例如 金牛"
+                    className={styles.starInput}
+                    bindinput={(e) => {
+                        setParams({ ...params, men: e.detail.value })
                     }}
                 />
             </div>
             <div className={styles.inputBox}>
                 <label> <span style={{ color: 'red' }}>*</span>女生 </label>
-                <input type="text" name="fname" className={styles.starInput} />
+                <input type="text" name="women" placeholder="例如 金牛"
+                    className={styles.starInput}
+                    bindinput={(e) => {
+                        setParams({ ...params, women: e.detail.value })
+                    }}
+                />
             </div>
+
             <div className={styles.btnLang} onClick={() => queryData()} >
                 立即测试
             </div>
             {
-                loading ? <Loading type="anna" color="#1890FF" /> : null
+                false ? <Loading type="anna" color="#1890FF" /> : null
             }
             <div className={styles.card} >
                 <div className={styles.cardTitle}>
-                    测算结果： <span>{`${shuju.men}男 配 ${shuju.women}女`}</span>
+                    测算结果： <span>{`${shuju.men ? shuju.men : '未知'}男 配 ${shuju.women ? shuju.women : '未知'}女`}</span>
                 </div>
                 <div className={styles.cardMid}>
                     <div className={styles.cardMidBox}>
@@ -112,12 +116,12 @@ export default () => {
                     <div className={styles.cardCon}>
                         <span className={styles.desc}>恋爱建议:</span>
                         <div className={styles.line}></div>
-                        <span>{shuju.lianai}</span>
+                        <text selectable={true}>{shuju.lianai}</text>
                     </div>
                     <div className={styles.cardCon}>
                         <span className={styles.desc}>注意事项:</span>
                         <div className={styles.line}></div>
-                        <span>{shuju.zhuyi}</span>
+                        <text selectable={true}>{shuju.zhuyi}</text>
                     </div>
                 </div>
             </div>

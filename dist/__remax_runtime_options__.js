@@ -822,9 +822,7 @@ module.exports = {
     "onReachBottom"
   ],
   "pages/common/starpair": [
-    "onLoad",
-    "onPullDownRefresh",
-    "onReachBottom"
+    "onLoad"
   ]
 },
           appEvents: []

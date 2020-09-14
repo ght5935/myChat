@@ -2,7 +2,7 @@ import * as React from 'react'
 import { View, request } from "remax/wechat";
 import { usePageEvent } from 'remax/macro';
 import { Loading, } from 'anna-remax-ui';
-import { showToast } from '@/utils/utils'
+import { showToast, successApi } from '@/utils/utils'
 import styles from './index.less'
 
 export default (props) => {
@@ -35,7 +35,7 @@ export default (props) => {
         })
     })
     const Down = (v) => {
-
+        showToast('抱歉！！暂不支持下载....')
         wx.saveImageToPhotosAlbum({
             filePath: v,
             success(res) {

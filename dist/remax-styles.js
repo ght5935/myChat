@@ -1,6 +1,10 @@
-(wx["webpackJsonp"] = wx["webpackJsonp"] || []).push([[2],{
+(wx["webpackJsonp"] = wx["webpackJsonp"] || []).push([["remax-styles"],{
 
-/***/ 4:
+/***/ "./src/pages/common/index.less?modules":
+/*!*********************************************!*\
+  !*** ./src/pages/common/index.less?modules ***!
+  \*********************************************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 // extracted by mini-css-extract-plugin
