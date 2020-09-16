@@ -823,6 +823,9 @@ module.exports = {
   ],
   "pages/common/starpair": [
     "onLoad"
+  ],
+  "pages/common/weather": [
+    "onLoad"
   ]
 },
           appEvents: []

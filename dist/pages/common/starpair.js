@@ -48,7 +48,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 var _page = function _page() {
-  var _React$useState = react__WEBPACK_IMPORTED_MODULE_1__["useState"](true),
+  var _React$useState = react__WEBPACK_IMPORTED_MODULE_1__["useState"](false),
       _React$useState2 = _slicedToArray(_React$useState, 2),
       loading = _React$useState2[0],
       setLoading = _React$useState2[1];
@@ -82,6 +82,8 @@ var _page = function _page() {
   };
 
   var queryData = function queryData() {
+    setLoading(true);
+
     if (isEmpty()) {
       console.log(params, '参数');
       Object(remax_wechat__WEBPACK_IMPORTED_MODULE_2__["request"])({
@@ -148,12 +150,10 @@ var _page = function _page() {
         women: e.detail.value
       }));
     }
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__["createElement"]("div", {
-    className: _index_less_modules__WEBPACK_IMPORTED_MODULE_5___default.a.btnLang,
-    onClick: function onClick() {
-      return queryData();
-    }
-  }, "\u7ACB\u5373\u6D4B\u8BD5"), false ? /*#__PURE__*/undefined : null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__["createElement"]("div", {
+  })), loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__["createElement"](anna_remax_ui__WEBPACK_IMPORTED_MODULE_3__["Loading"], {
+    type: "anna",
+    color: "#1890FF"
+  }) : null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__["createElement"]("div", {
     className: _index_less_modules__WEBPACK_IMPORTED_MODULE_5___default.a.card
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__["createElement"]("div", {
     className: _index_less_modules__WEBPACK_IMPORTED_MODULE_5___default.a.cardTitle
@@ -195,7 +195,12 @@ var _page = function _page() {
     className: _index_less_modules__WEBPACK_IMPORTED_MODULE_5___default.a.line
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__["createElement"]("text", {
     selectable: true
-  }, shuju.zhuyi)))));
+  }, shuju.zhuyi)))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__["createElement"]("div", {
+    className: _index_less_modules__WEBPACK_IMPORTED_MODULE_5___default.a.btnLang,
+    onClick: function onClick() {
+      return queryData();
+    }
+  }, "\u7ACB\u5373\u6D4B\u8BD5"));
 };
 
 _page.displayName = "Page[pages/common/starpair]";

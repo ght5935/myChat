@@ -1,6 +1,6 @@
 page {
-  width: 98%;
-  height: 98%;
+  width: 100%;
+  height: 100%;
   font-size: 14px;
   color: #47546D;
   letter-spacing: 2px;
@@ -9,7 +9,22 @@ page {
   background-position: center center;
 }
 
-
+page::after{
+    background-image: url(https://img.xjh.me/random_img.php?type=bg&ctype=acg&return=302);
+    content: "";
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity: 0.2;
+    filter: grayscale(100%);
+    filter: gray;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
 /* 
 html5doctor.com Reset Stylesheet
 v1.4.1 

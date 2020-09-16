@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { View, request } from "remax/wechat";
+import { View, request, Swiper } from "remax/wechat";
 import { usePageEvent } from 'remax/macro';
 import { Loading, } from 'anna-remax-ui';
 import { showToast, successApi } from '@/utils/utils'
@@ -48,16 +48,21 @@ export default (props) => {
     }
     return (
         <View className={styles.app}>
-            <div className={styles.shici}>今日壁纸</div>
+            {/* <div className={styles.shici}>今日壁纸</div> */}
             {
-                loading ? <Loading type="anna" color="#1890FF" /> :
-                    imgList && imgList.length > 0 ? imgList.map(v => (
-                        <div key={v.id} className={styles.bizhiBox} onClick={() => Down(v.img)}>
-                            <img src={v.img} alt="壁纸" className={styles.bizhi} />
-                        </div>
-
-                    )) : null
+                loading ? <div className={styles.loadingBox}><Loading type="anna" color="#FF7777" /></div> : null
             }
+            <Swiper className={styles.swiper} autoplay="true" indicator-dots={true}>
+                {
+                    imgList && imgList.length > 0 ? imgList.map(v => (
+                        <Swiper-item item-id={v.id} key={v.id}>
+                            <div className={styles.bizhiBox} onClick={() => Down(v.img)}>
+                                <image src={v.img} lazy-load='true' alt="壁纸" className={styles.bizhi} />
+                            </div>
+                        </Swiper-item>
+                    )) : null
+                }
+            </Swiper>
         </View>
     )
 }

@@ -95,24 +95,31 @@ var _page = function _page(props) {
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__["createElement"](remax_wechat__WEBPACK_IMPORTED_MODULE_2__["View"], {
     className: _index_less_modules__WEBPACK_IMPORTED_MODULE_5___default.a.app
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__["createElement"]("div", {
-    className: _index_less_modules__WEBPACK_IMPORTED_MODULE_5___default.a.shici
-  }, "\u4ECA\u65E5\u58C1\u7EB8"), loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__["createElement"](anna_remax_ui__WEBPACK_IMPORTED_MODULE_3__["Loading"], {
+  }, loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__["createElement"]("div", {
+    className: _index_less_modules__WEBPACK_IMPORTED_MODULE_5___default.a.loadingBox
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__["createElement"](anna_remax_ui__WEBPACK_IMPORTED_MODULE_3__["Loading"], {
     type: "anna",
-    color: "#1890FF"
-  }) : imgList && imgList.length > 0 ? imgList.map(function (v) {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__["createElement"]("div", {
-      key: v.id,
+    color: "#FF7777"
+  })) : null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__["createElement"](remax_wechat__WEBPACK_IMPORTED_MODULE_2__["Swiper"], {
+    className: _index_less_modules__WEBPACK_IMPORTED_MODULE_5___default.a.swiper,
+    autoplay: "true",
+    "indicator-dots": true
+  }, imgList && imgList.length > 0 ? imgList.map(function (v) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__["createElement"]("Swiper-item", {
+      "item-id": v.id,
+      key: v.id
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__["createElement"]("div", {
       className: _index_less_modules__WEBPACK_IMPORTED_MODULE_5___default.a.bizhiBox,
       onClick: function onClick() {
         return Down(v.img);
       }
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__["createElement"]("img", {
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__["createElement"]("image", {
       src: v.img,
+      "lazy-load": "true",
       alt: "\u58C1\u7EB8",
       className: _index_less_modules__WEBPACK_IMPORTED_MODULE_5___default.a.bizhi
-    }));
-  }) : null);
+    })));
+  }) : null));
 };
 
 _page.displayName = "Page[pages/common/wallpaper]";

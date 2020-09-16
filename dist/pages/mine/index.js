@@ -140,6 +140,12 @@ var _page = function _page() {
     });
   };
 
+  var goweather = function goweather() {
+    wx.navigateTo({
+      url: "/pages/common/weather"
+    });
+  };
+
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__["createElement"](remax_wechat__WEBPACK_IMPORTED_MODULE_2__["View"], {
     className: _index_less_modules__WEBPACK_IMPORTED_MODULE_7___default.a.app
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__["createElement"]("div", {
@@ -230,7 +236,7 @@ var _page = function _page() {
     className: _index_less_modules__WEBPACK_IMPORTED_MODULE_7___default.a.listCol
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__["createElement"]("div", {
     className: _index_less_modules__WEBPACK_IMPORTED_MODULE_7___default.a.listBox,
-    onClick: myWorld
+    onClick: goweather
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__["createElement"]("img", {
     src: _utils_conf__WEBPACK_IMPORTED_MODULE_6__["Icon2"],
     alt: "heihei",
@@ -271,7 +277,7 @@ _page.displayName = "Page[pages/mine/index]";
 /***/ (function(module, exports, __webpack_require__) {
 
 // extracted by mini-css-extract-plugin
-module.exports = {"app":"app___23sT_","shici":"shici___1NI5L","btnLang":"btnLang___1jGr9","infoRow":"infoRow___1DXtH","infoCol":"infoCol___1fepE","info":"info___kdgxA","bindBtn":"bindBtn___1Zo48","touBox":"touBox___2rd9f","tou":"tou___fry5u","Icon":"Icon___1sCcv","listRow":"listRow___13dTd","listCol":"listCol___1o1pf","listBox":"listBox___24Vzo"};
+module.exports = {"app":"app___23sT_","shici":"shici___1NI5L","loadingBox":"loadingBox___1aqco","btnLang":"btnLang___1jGr9","infoRow":"infoRow___1DXtH","infoCol":"infoCol___1fepE","info":"info___kdgxA","bindBtn":"bindBtn___1Zo48","touBox":"touBox___2rd9f","tou":"tou___fry5u","Icon":"Icon___1sCcv","listRow":"listRow___13dTd","listCol":"listCol___1o1pf","listBox":"listBox___24Vzo"};
 
 /***/ }),
 

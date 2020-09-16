@@ -1,15 +1,16 @@
 
+@btn-lang-height: 40px;
 .app {
-    width: 96%;
-    height: 96%;
-    margin-top: 2%;
-    margin-left: 2%;
+    width: 100%;
+    height: 100%;
+    // height: calc(~'100% - @{btn-lang-height}');
     color: #666;
-    font-size: 14px;
-
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 4%;
+    box-sizing: border-box;
+    position: relative;
   }
   .shici{
     width: 90%;
@@ -21,13 +22,26 @@
     text-overflow:ellipsis;
     white-space: nowrap;
   }
+  .loadingBox{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   .btnLang{
     width: 100%;
-    height: 30px;
+    height: @btn-lang-height;
     text-align: center;
-    line-height: 30px;
+    line-height: 40px;
     border-radius: 4px;
-    background: green;
+    background-image: linear-gradient(to right, #bf30ac 0%, #0f9d58 100%);
+    opacity: 0.9;
     color: #fff;
-    margin: 5px auto;
+    margin: 0 auto;
+    position: fixed;
+    bottom: 0;
+    z-index: 1;
   }

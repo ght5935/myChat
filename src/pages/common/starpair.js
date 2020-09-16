@@ -7,7 +7,7 @@ import { showToast, successApi } from '@/utils/utils'
 import styles from './index.less'
 
 export default () => {
-    const [loading, setLoading] = React.useState(true);
+    const [loading, setLoading] = React.useState(false);
     const [shuju, setShuju] = React.useState('');
     const [params, setParams] = React.useState({
         key: '4d2b150805d54841064fb46ab0371e38',
@@ -26,6 +26,7 @@ export default () => {
         return true
     }
     const queryData = () => {
+        setLoading(true)
         if (isEmpty()) {
             console.log(params, '参数')
             request({
@@ -82,11 +83,9 @@ export default () => {
                 />
             </div>
 
-            <div className={styles.btnLang} onClick={() => queryData()} >
-                立即测试
-            </div>
+
             {
-                false ? <Loading type="anna" color="#1890FF" /> : null
+                loading ? <Loading type="anna" color="#1890FF" /> : null
             }
             <div className={styles.card} >
                 <div className={styles.cardTitle}>
@@ -125,7 +124,9 @@ export default () => {
                     </div>
                 </div>
             </div>
-
+            <div className={styles.btnLang} onClick={() => queryData()} >
+                立即测试
+            </div>
         </View>
     )
 }

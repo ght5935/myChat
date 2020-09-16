@@ -64,6 +64,11 @@ export default () => {
             url: `/pages/common/starpair`,
         })
     }
+    const goweather = () => {
+        wx.navigateTo({
+            url: `/pages/common/weather`,
+        })
+    }
     return (
         <View className={styles.app}>
             <div className={styles.shici}>{shici}</div>
@@ -119,7 +124,7 @@ export default () => {
                     </div>
                 </Col>
                 <Col span={6} className={styles.listCol}>
-                    <div className={styles.listBox} onClick={myWorld}>
+                    <div className={styles.listBox} onClick={goweather}>
                         <img src={Icon2} alt="heihei" className={styles.Icon} />
                         <div > 天气查询 </div>
                     </div>
