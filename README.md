@@ -36,4 +36,35 @@ $ yarn build
 ```bash
 $ npm install anna-remax-ui --save
 ```
-  
+
+## 项目结构
+现在我们来看一下 Remax 应用的结构：
+my-app/
+┳ package.json
+┣ remax.config.js
+┣ dist/
+┣ node_modules/
+┣ public/
+┣ src/
+┗━┓ app.js
+  ┣ app.css
+  ┣ app.config.js
+  ┣ pages/
+  ┗━┓ index/
+    ┣ heart/
+    ┣ mine/
+    ┗━┓
+
+`dist` 为编译后的文件目录。
+
+`public` 为全局静态资源目录。
+
+`src` 为源文件目录。
+
+`app.js` 入口文件。
+
+`app.css `全局样式文件。
+
+`app.config.js` 为小程序全局配置文件，对应 `app.json`。
+
+`remax.config.js` 项目配置

@@ -38,6 +38,9 @@ export default () => {
     }
     usePageEvent('onLoad', () => {
         queryData()
+        wx.setNavigationBarTitle({
+            title: "每日一笑"
+        })
     })
     usePageEvent('onReachBottom', () => {
         setLoading(false)
@@ -52,15 +55,17 @@ export default () => {
 
     return (
         <View className={styles.app}>
-            <div className={styles.shici}>每日一笑</div>
             {
-                loading ? <Loading type="anna" color="#1890FF" /> :
-                    jokeList && jokeList.length > 0 ? jokeList.map(v => (
-                        <div key={v.hashId} className={styles.jokeBox} >
-                            {v.content}
-                        </div>
+                loading ? <div className={styles.loadingBox}><Loading type="anna" color="#FF7777" /></div> : null
 
-                    )) : null
+            }
+            {
+                jokeList && jokeList.length > 0 ? jokeList.map(v => (
+                    <div key={v.hashId} className={styles.jokeBox} >
+                        {v.content}
+                    </div>
+
+                )) : null
             }
         </View>
     )

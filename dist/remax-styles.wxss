@@ -128,5 +128,6 @@
 .skyList___3vYbJ {
   width: 100%;
   margin: 8px auto;
+  text-align: center;
 }
 

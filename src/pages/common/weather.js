@@ -59,6 +59,9 @@ export default () => {
         }
     }
     usePageEvent('onLoad', () => {
+        wx.setNavigationBarTitle({
+            title: "天气查询"
+        })
         // queryData()
     })
 
@@ -100,15 +103,11 @@ export default () => {
                                     )
                                 }) : null
                         }
-
-                    </div>
-                    : null
+                    </div> : null
             }
             <div className={styles.btnLang} onClick={() => queryData()} >
                 立即查询
             </div>
-
-
         </View>
     )
 }

@@ -9,7 +9,9 @@ export default (props) => {
     const [loading, setLoading] = React.useState(true);
     const [imgList, setImgList] = React.useState([]);
     usePageEvent('onLoad', (option) => {
-
+        wx.setNavigationBarTitle({
+            title: "今日壁纸"
+        })
         request({
             url: `http://service.picasso.adesk.com/v1/vertical/vertical`, //仅为示例，并非真实的接口地址
             data: {
@@ -48,7 +50,6 @@ export default (props) => {
     }
     return (
         <View className={styles.app}>
-            {/* <div className={styles.shici}>今日壁纸</div> */}
             {
                 loading ? <div className={styles.loadingBox}><Loading type="anna" color="#FF7777" /></div> : null
             }

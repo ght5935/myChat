@@ -18,9 +18,12 @@ export default () => {
         setShici(res.data.content)
       }
     })
-
   })
-
+  usePageEvent('onLoad', () => {
+    wx.setNavigationBarTitle({
+      title: "首页"
+    })
+  })
   const myWorld = () => {
     showToast('开发中....')
   }

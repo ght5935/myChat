@@ -15,6 +15,9 @@ export default () => {
         userInfo: '',
     });
     usePageEvent('onLoad', () => {
+        wx.setNavigationBarTitle({
+            title: "我的"
+        })
         request(
             {
                 url: 'https://v1.jinrishici.com/shuqing/aiqing', //仅为示例，并非真实的接口地址
@@ -28,7 +31,6 @@ export default () => {
             }
         )
     })
-
     useNativeEffect(() => {
 
         // 建议一定要写 hooks 依赖，否则所有 setData 回调后，都会在这里执行

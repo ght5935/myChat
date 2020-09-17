@@ -51,6 +51,9 @@ export default () => {
         }
     }
     usePageEvent('onLoad', () => {
+        wx.setNavigationBarTitle({
+            title: "星座配对"
+        })
         // queryData()
     })
     // usePageEvent('onReachBottom', () => {
@@ -85,7 +88,7 @@ export default () => {
 
 
             {
-                loading ? <Loading type="anna" color="#1890FF" /> : null
+                loading ? <div className={styles.loadingBox}><Loading type="anna" color="#FF7777" /></div> : null
             }
             <div className={styles.card} >
                 <div className={styles.cardTitle}>

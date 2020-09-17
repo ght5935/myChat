@@ -807,9 +807,12 @@ module.exports = {
 },
           pageEvents: {
   "pages/index/index": [
+    "onLoad",
     "onShow"
   ],
-  "pages/heart/index": [],
+  "pages/heart/index": [
+    "onLoad"
+  ],
   "pages/mine/index": [
     "onLoad"
   ],
