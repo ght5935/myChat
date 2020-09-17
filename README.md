@@ -39,21 +39,21 @@ $ npm install anna-remax-ui --save
 
 ## 项目结构
 现在我们来看一下 Remax 应用的结构：
-my-app/
-┳ package.json
-┣ remax.config.js
-┣ dist/
-┣ node_modules/
-┣ public/
-┣ src/
-┗━┓ app.js
-  ┣ app.css
-  ┣ app.config.js
-  ┣ pages/
-  ┗━┓ index/
-    ┣ heart/
-    ┣ mine/
-    ┗━┓
+    my-app/
+    ┳ package.json
+    ┣ remax.config.js
+    ┣ dist/
+    ┣ node_modules/
+    ┣ public/
+    ┣ src/
+    ┗━┓ app.js
+    ┣ app.css
+    ┣ app.config.js
+    ┣ pages/
+    ┗━┓ index/
+        ┣ heart/
+        ┣ mine/
+        ┗━┓
 
 `dist` 为编译后的文件目录。
 
