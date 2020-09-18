@@ -9,10 +9,14 @@ import styles from './index.less'
 export default () => {
     const [loading, setLoading] = React.useState(false);
     const [shuju, setShuju] = React.useState('');
+    const [place, setPlace] = React.useState({
+        men: '例如 狮子',
+        women: '例如 射手'
+    });
     const [params, setParams] = React.useState({
         key: '4d2b150805d54841064fb46ab0371e38',
-        men: '金牛',
-        women: '金牛'
+        men: '狮子',
+        women: '射手'
     });
     const isEmpty = () => {
         if (!params.men) {
@@ -28,6 +32,10 @@ export default () => {
     const queryData = () => {
         setLoading(true)
         if (isEmpty()) {
+            setPlace({
+                men: params.men,
+                women: params.women
+            })
             console.log(params, '参数')
             request({
                 url: `http://apis.juhe.cn/xzpd/query`, //仅为示例，并非真实的接口地址
@@ -69,7 +77,7 @@ export default () => {
         <View className={styles.app}>
             <div className={styles.inputBox}>
                 <label> <span style={{ color: 'red' }}>*</span>男生 </label>
-                <input type="text" name="men" placeholder="例如 金牛"
+                <input type="text" placeholder={place.men}
                     className={styles.starInput}
                     bindinput={(e) => {
                         setParams({ ...params, men: e.detail.value })
@@ -78,7 +86,7 @@ export default () => {
             </div>
             <div className={styles.inputBox}>
                 <label> <span style={{ color: 'red' }}>*</span>女生 </label>
-                <input type="text" name="women" placeholder="例如 金牛"
+                <input type="text" placeholder={place.women}
                     className={styles.starInput}
                     bindinput={(e) => {
                         setParams({ ...params, women: e.detail.value })
