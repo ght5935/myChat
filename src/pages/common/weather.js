@@ -9,6 +9,7 @@ import styles from './index.less'
 export default () => {
     const [loading, setLoading] = React.useState(false);
     const [shuju, setShuju] = React.useState('');
+    const [place, setPlace] = React.useState('例如 上海');
     const [params, setParams] = React.useState({
         key: 'db3070b2f951c3579e7ef292f609d7cb',
         city: '上海',
@@ -28,6 +29,7 @@ export default () => {
         setLoading(true)
         if (isEmpty()) {
             console.log(params, '参数')
+            setPlace(params.city)
             request({
                 url: `http://apis.juhe.cn/simpleWeather/query`, //仅为示例，并非真实的接口地址
                 data: {
@@ -69,10 +71,10 @@ export default () => {
         <View className={styles.app}>
             <div className={styles.inputBox}>
                 <label> <span style={{ color: 'red' }}>*</span>城市 </label>
-                <input type="text" name="men" placeholder="例如 上海"
+                <input type="text" name="men" placeholder={place}
                     className={styles.starInput}
                     bindinput={(e) => {
-                        setParams({ ...params, men: e.detail.value })
+                        setParams({ ...params, city: e.detail.value })
                     }}
                 />
             </div>
