@@ -49,7 +49,7 @@ export default (props) => {
         })
     }
     return (
-        <View className={styles.app}>
+        <View className={styles.app} style={{ height: '100%' }}>
             {
                 loading ? <div className={styles.loadingBox}><Loading type="anna" color="#FF7777" /></div> : null
             }
