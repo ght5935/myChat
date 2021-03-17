@@ -7,6 +7,7 @@ module.exports = {
     "pages/common/joke",
     "pages/common/starpair",
     "pages/common/weather",
+    "pages/common/star",
   ],
   window: {
     navigationBarTitleText: 'Remax',

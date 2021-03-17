@@ -71,6 +71,11 @@ export default () => {
             url: `/pages/common/weather`,
         })
     }
+    const gostar = () => {
+        wx.navigateTo({
+            url: `/pages/common/star`,
+        })
+    }
     return (
         <View className={styles.app}>
             <div className={styles.shici}>{shici}</div>
@@ -106,7 +111,7 @@ export default () => {
                     </div>
                 </Col>
                 <Col span={6} className={styles.listCol}>
-                    <div className={styles.listBox} onClick={myWorld}>
+                    <div className={styles.listBox} onClick={gostar}>
                         <img src={Icon3} alt="heihei" className={styles.Icon} />
                         <div > 星座运势 </div>
                     </div>

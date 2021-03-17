@@ -1,5 +1,5 @@
-import './app.css';
 import 'anna-remax-ui/dist/anna.css';
+import './app.css';
 
 wx.cloud.init({
     env: 'gaoht195935'

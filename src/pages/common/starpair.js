@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { View, request } from "remax/wechat";
 import { usePageEvent } from 'remax/macro';
-import { Loading, Card, Button } from 'anna-remax-ui';
+import { Loading, Input, Button } from 'anna-remax-ui';
 import { showToast, successApi } from '@/utils/utils'
 
 import styles from './index.less'
@@ -9,14 +9,11 @@ import styles from './index.less'
 export default () => {
     const [loading, setLoading] = React.useState(false);
     const [shuju, setShuju] = React.useState('');
-    const [place, setPlace] = React.useState({
-        men: '例如 狮子',
-        women: '例如 射手'
-    });
+
     const [params, setParams] = React.useState({
         key: '4d2b150805d54841064fb46ab0371e38',
-        men: '狮子',
-        women: '射手'
+        men: '',
+        women: ''
     });
     const isEmpty = () => {
         if (!params.men) {
@@ -30,13 +27,8 @@ export default () => {
         return true
     }
     const queryData = () => {
-        setLoading(true)
         if (isEmpty()) {
-            setPlace({
-                men: params.men,
-                women: params.women
-            })
-            console.log(params, '参数')
+            setLoading(true)
             request({
                 url: `http://apis.juhe.cn/xzpd/query`, //仅为示例，并非真实的接口地址
                 data: {
@@ -50,6 +42,9 @@ export default () => {
                     console.log(result, 'result')
                     setShuju(result.result)
                     setLoading(false)
+                    if (result.error_code != 0) {
+                        showToast('哈喽！！请输入正确的星座。 例如 狮子座....')
+                    }
                 },
                 fail(e) {
                     showToast('抱歉！！数据正在开发中....')
@@ -62,39 +57,30 @@ export default () => {
         wx.setNavigationBarTitle({
             title: "星座配对"
         })
-        // queryData()
     })
-    // usePageEvent('onReachBottom', () => {
 
-    //     console.log('上拉加载')
-    // })
-    // usePageEvent('onPullDownRefresh', () => {
-    //     console.log('下拉刷新')
-    // })
 
 
     return (
         <View className={styles.app}>
-            <div className={styles.inputBox}>
-                <label> <span style={{ color: 'red' }}>*</span>男生 </label>
-                <input type="text" placeholder={place.men}
-                    className={styles.starInput}
-                    bindinput={(e) => {
-                        setParams({ ...params, men: e.detail.value })
-                    }}
+            <div className={styles.formBox}>
+                <Input
+                    label="男生"
+                    placeholder="例如 狮子座"
+                    border={true}
+                    required
+                    onChange={e => setParams({ ...params, men: e.target.value })}
                 />
             </div>
-            <div className={styles.inputBox}>
-                <label> <span style={{ color: 'red' }}>*</span>女生 </label>
-                <input type="text" placeholder={place.women}
-                    className={styles.starInput}
-                    bindinput={(e) => {
-                        setParams({ ...params, women: e.detail.value })
-                    }}
+            <div className={styles.formBox}>
+                <Input
+                    label="女生"
+                    placeholder="例如 射手座"
+                    border={true}
+                    required
+                    onChange={e => setParams({ ...params, women: e.target.value })}
                 />
             </div>
-
-
             {
                 loading ? <div className={styles.loadingBox}><Loading type="anna" color="#FF7777" /></div> : null
             }

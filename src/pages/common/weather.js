@@ -26,9 +26,8 @@ export default () => {
         return true
     }
     const queryData = () => {
-        setLoading(true)
         if (isEmpty()) {
-            console.log(params, '参数')
+            setLoading(true)
             setPlace(params.city)
             request({
                 url: `http://apis.juhe.cn/simpleWeather/query`, //仅为示例，并非真实的接口地址
